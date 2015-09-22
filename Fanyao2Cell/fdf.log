@@ -1,5 +1,5 @@
 
-#FDF: Opened INPUT_TMP.96973      for input. Unit: 12
+#FDF: Opened INPUT_TMP.33902      for input. Unit: 12
 
 fdf-debug              0     # Default value
 SystemName     graphene                                                                                                                            
@@ -68,7 +68,7 @@ LatticeConstant          4.648728119           Bohr
 %endblock LatticeVectors                                                       
 
 AtomicCoordinatesFormat     Ang                                                                                                                                 
-NumberOfAtoms                        2
+NumberOfAtoms                       12
 ZM.UnitsLength     Bohr           # Default value
 ZM.UnitsAngle     rad            # Default value
 ZM.ForceTolLength         0.1555740000E-02 Ry/Bohr     # Default value
@@ -78,8 +78,18 @@ ZM.MaxDisplAngle         0.3000000000E-02 rad     # Default value
 ZM.CalcAllForces              F     # Default value
 
 %block AtomicCoordinatesAndAtomicSpecies                                       
-  0.000   0.000   6.000    1                                                   
-  1.420   0.000   6.000    1                                                   
+  0.000   0.000   6.000    1	#1                                                
+  1.420   0.000   6.000    1	#2                                                
+  2.130   1.229   6.000    1	#3                                                
+  1.420   2.459   6.000    1	#4                                                
+  0.000   2.459   6.000    1	#5                                                
+  3.550   1.229   6.000    1	#6                                                
+  4.260   0.000   6.000    1	#7                                                
+  5.680   0.000   6.000    1	#8                                                
+  6.390   1.229   6.000    1	#9                                                
+  5.680   2.459   6.000    1    #10                                            
+  4.260   2.459   6.000    1    #11                                            
+  2.130   3.688   6.000    1	#12                                               
 %endblock AtomicCoordinatesAndAtomicSpecies                                    
 
 UseSaveData              F     # Default value
@@ -164,7 +174,7 @@ MD.TauRelax          100.0000000     fs     # Default value
 MD.BulkModulus         0.6797730000E-02 Ry/Bohr**3     # Default value
 MD.FCDispl         0.4000000000E-01 Bohr     # Default value
 MD.FCfirst              1     # Default value
-MD.FClast              2     # Default value
+MD.FClast             12     # Default value
 UseSpatialDecomposition              F     # Default value
 UseDomainDecomposition              F     # Default value
 Harris_functional              F     # Default value
@@ -214,7 +224,7 @@ ProcessorGridY              1     # Default value
 ProcessorGridZ              1     # Default value
 processorY              1     # Default value
 blocksize             24     # Default value
-NumberOfEigenStates             26     # Default value
+NumberOfEigenStates            156     # Default value
 TimeReversalSymmetryForKpoints              T     # Default value
 
 %block kgrid_Monkhorst_Pack                                                    
