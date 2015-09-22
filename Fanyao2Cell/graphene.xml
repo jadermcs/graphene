@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cml convention="CMLComp" fileId="graphene.xml" xmlns="http://www.xml-cml.org/schema" xmlns:siesta="http://www.uam.es/siesta/namespace" xmlns:siestaUnits="http://www.uam.es/siesta/namespace/units" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fpx="http://www.uszla.me.uk/fpx" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:units="http://www.uszla.me.uk/FoX/units" xmlns:cmlUnits="http://www.xml-cml.org/units/units" xmlns:siUnits="http://www.xml-cml.org/units/siUnits" xmlns:atomicUnits="http://www.xml-cml.org/units/atomic">
+  <metadata name="UUID" content="b3d03cb0-611e-11e5-5ad3-2b9ef9bbb3f8"/>
+  <metadataList>
+    <metadata name="siesta:Program" content="Siesta"/>
+    <metadata name="siesta:Version" content="                                       siesta-3.2-pl-5"/>
+    <metadata name="siesta:Arch" content="x86_64-unknown-linux-gnu--unknown"/>
+    <metadata name="siesta:Flags" content="mpif90 -g -O2"/>
+    <metadata name="siesta:StartTime" content="2015-09-22T14-39-56"/>
+    <metadata name="siesta:Mode" content="Serial"/>
+    <metadata name="siesta:Nodes" content="         1"/>
+    <metadata name="siesta:NetCDF" content="false"/>
+  </metadataList>
+  <module title="Initial System">
+    <molecule>
+      <atomArray>
+        <atom elementType="C" x3="0.000000000000e0" y3="7.100000000000e-1" z3="1.229756073680e0" ref="siesta:e001"/>
+        <atom elementType="C" x3="0.000000000000e0" y3="1.420000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="C" x3="0.000000000000e0" y3="2.840000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="C" x3="0.000000000000e0" y3="1.420000000000e0" z3="2.459512147360e0" ref="siesta:e001"/>
+        <atom elementType="C" x3="0.000000000000e0" y3="2.840000000000e0" z3="2.459512147360e0" ref="siesta:e001"/>
+        <atom elementType="C" x3="0.000000000000e0" y3="3.550000000000e0" z3="1.229756073680e0" ref="siesta:e001"/>
+      </atomArray>
+    </molecule>
+    <lattice dictRef="siesta:ucell">
+      <latticeVector units="siestaUnits:angstrom" dictRef="cml:latticeVector">2.683412166440e0 0.000000000000e0 0.000000000000e0</latticeVector>
+      <latticeVector units="siestaUnits:angstrom" dictRef="cml:latticeVector">0.000000000000e0 2.683412166440e0 0.000000000000e0</latticeVector>
+      <latticeVector units="siestaUnits:angstrom" dictRef="cml:latticeVector">0.000000000000e0 0.000000000000e0 2.683412166440e0</latticeVector>
+    </lattice>
+    <property dictRef="siesta:shape">
+      <scalar dataType="xsd:string">bulk</scalar>
+    </property>
+  </module>
+  <parameterList title="Input Parameters">
+    <parameter dictRef="siesta:sname" name="SystemName">
+      <scalar dataType="xsd:string">graphene</scalar>
+    </parameter>
+    <parameter dictRef="siesta:slabel" name="SystemLabel">
+      <scalar dataType="xsd:string">graphene</scalar>
+    </parameter>
+    <parameter dictRef="siesta:verbosity" name="LongOutput">
+      <scalar dataType="xsd:boolean">false</scalar>
+    </parameter>
+    <parameter title="NumberOfSpecies" dictRef="siesta:ns">
+      <scalar dataType="xsd:integer" units="cmlUnits:countable">1</scalar>
+    </parameter>
+    <parameter name="WriteDenChar">
+      <scalar dataType="xsd:boolean">false</scalar>
+    </parameter>
+    <parameter name="WriteMullikenPop">
+      <scalar dataType="xsd:integer" units="cmlUnits:dimensionless">0</scalar>
+    </parameter>
+    <parameter dictRef="siesta:g2max" name="MeshCutOff">
+      <scalar dataType="fpx:real" units="siestaUnits:Ry">1.000000000000e2</scalar>
+    </parameter>
+    <parameter dictRef="siesta:NetCharge" name="NetCharge">
+      <scalar dataType="fpx:real" units="siestaUnits:e__">0.000000000000e0</scalar>
+    </parameter>
+    <parameter dictRef="siesta:maxscf" name="MaxSCFIterations">
+      <scalar dataType="xsd:integer" units="cmlUnits:countable">500</scalar>
+    </parameter>
+    <parameter dictRef="siesta:maxsav" name="DM.NumberPulay">
+      <scalar dataType="xsd:integer" units="cmlUnits:countable">5</scalar>
+    </parameter>
+    <parameter dictRef="siesta:broyden_maxit" name="DM.NumberBroyden">
+      <scalar dataType="xsd:integer" units="cmlUnits:countable">0</scalar>
+    </parameter>
+    <parameter dictRef="siesta:mix" name="DM.MixSCF1">
+      <scalar dataType="xsd:boolean">false</scalar>
+    </parameter>
+    <parameter dictRef="siesta:pulfile" name="DM.PulayOnFile">
+      <scalar dataType="xsd:boolean">false</scalar>
+    </parameter>
+    <parameter dictRef="siesta:avoid_first_after_kick" name="DM.Pulay.Avoid.First.After.Kick">
+      <scalar dataType="xsd:boolean">false</scalar>
+    </parameter>
+    <parameter dictRef="siesta:wmix" name="DM.MixingWeight">
+      <scalar dataType="fpx:real" units="cmlUnits:dimensionless">1.000000000000e-1</scalar>
+    </parameter>
+    <parameter dictRef="siesta:occtol" name="DM.OccupancyTolerance">
+      <scalar dataType="fpx:real" units="cmlUnits:dimensionless">1.000000000000e-12</scalar>
+    </parameter>
+    <parameter dictRef="siesta:nkick" name="DM.NumberKick">
+      <scalar dataType="xsd:integer" units="cmlUnits:countable">0</scalar>
+    </parameter>
+    <parameter dictRef="siesta:wmixkick" name="DM.KickMixingWeight">
+      <scalar dataType="fpx:real" units="cmlUnits:dimensionless">5.000000000000e-1</scalar>
+    </parameter>
+    <parameter dictRef="siesta:dDtol" name="DM.Tolerance">
+      <scalar dataType="fpx:real" units="siestaUnits:eAng_3">1.000000000000e-4</scalar>
+    </parameter>
+    <parameter dictRef="siesta:ReqEnergyConv" name="DM.RequireEnergyConvergence">
+      <scalar dataType="xsd:boolean">false</scalar>
+    </parameter>
+    <parameter dictRef="siesta:dEtol" name="DM.EnergyTolerance">
+      <scalar dataType="fpx:real" units="siestaUnits:eV">1.000000000000e-4</scalar>
+    </parameter>
+    <parameter dictRef="siesta:ReqHarrisConv" name="DM.RequireHarrisConvergence">
+      <scalar dataType="xsd:boolean">false</scalar>
+    </parameter>
+    <parameter dictRef="siesta:Harris_tolerance" name="DM.HarrisTolerance">
+      <scalar dataType="fpx:real" units="siestaUnits:eV">7.349806700084e-6</scalar>
+    </parameter>
+    <parameter dictRef="siesta:usesavedm" name="DM.UseSaveDM">
+      <scalar dataType="xsd:boolean">false</scalar>
+    </parameter>
+    <parameter dictRef="siesta:negl" name="NeglNonOverlapInt">
+      <scalar dataType="xsd:boolean">false</scalar>
+    </parameter>
+    <parameter dictRef="siesta:SCFmethod" name="SolutionMethod">
+      <scalar dataType="xsd:string">diagon</scalar>
+    </parameter>
+    <parameter dictRef="siesta:DaC" name="Diag.DivideAndConquer">
+      <scalar dataType="xsd:boolean">true</scalar>
+    </parameter>
+    <parameter dictRef="siesta:MemoryFactor" name="Diag.Memory">
+      <scalar dataType="fpx:real" units="cmlUnits:dimensionless">1.000000000000e0</scalar>
+    </parameter>
+    <parameter dictRef="siesta:etemp" name="ElectronicTemperature">
+      <scalar dataType="fpx:real" units="siestaUnits:Ry">1.900000000000e-3</scalar>
+    </parameter>
+    <parameter dictRef="siesta:fixspin" name="FixSpin">
+      <scalar dataType="xsd:boolean">false</scalar>
+    </parameter>
+    <parameter dictRef="siesta:ts" name="TotalSpin">
+      <scalar dataType="fpx:real" units="siestaUnits:eSpin">0.000000000000e0</scalar>
+    </parameter>
+    <parameter name="MD.TypeOfRun">
+      <scalar dataType="xsd:string">Verlet</scalar>
+    </parameter>
+    <parameter name="MD.InitialTimeStep">
+      <scalar dataType="xsd:integer" units="cmlUnits:countable">1</scalar>
+    </parameter>
+    <parameter name="MD.FinalTimeStep">
+      <scalar dataType="xsd:integer" units="cmlUnits:countable">1</scalar>
+    </parameter>
+    <parameter name="MD.LengthTimeStep">
+      <scalar dataType="fpx:real" units="siestaUnits:fs">1.000000000000e0</scalar>
+    </parameter>
+    <parameter name="MD.InitialTemperature">
+      <scalar dataType="fpx:real" units="siestaUnits:K">0.000000000000e0</scalar>
+    </parameter>
+    <parameter name="MD.Quench">
+      <scalar dataType="xsd:boolean">false</scalar>
+    </parameter>
+    <parameter name="MD.BulkModulus">
+      <scalar dataType="fpx:real" units="siestaUnits:Ry_Bohr__3">6.797730000000e-3</scalar>
+    </parameter>
+  </parameterList>
+  <propertyList dictRef="siesta:kpoints" title="k-points">
+    <property dictRef="siesta:nkpnt">
+      <scalar dataType="xsd:integer" units="cmlUnits:countable">150</scalar>
+    </property>
+    <kpoint coords="0.000000000000e0 -8.195218330663e-1 3.902484919363e-2" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -5.853727379045e-1 3.902484919363e-2" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -3.512236427427e-1 3.902484919363e-2" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.170745475809e-1 3.902484919363e-2" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.170745475809e-1 3.902484919363e-2" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 3.512236427427e-1 3.902484919363e-2" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 5.853727379045e-1 3.902484919363e-2" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 8.195218330663e-1 3.902484919363e-2" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.053670928228e0 3.902484919363e-2" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.053670928228e0 3.902484919363e-2" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -8.195218330663e-1 1.170745475809e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -5.853727379045e-1 1.170745475809e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -3.512236427427e-1 1.170745475809e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.170745475809e-1 1.170745475809e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.170745475809e-1 1.170745475809e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 3.512236427427e-1 1.170745475809e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 5.853727379045e-1 1.170745475809e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 8.195218330663e-1 1.170745475809e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.053670928228e0 1.170745475809e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.053670928228e0 1.170745475809e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -8.195218330663e-1 1.951242459682e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -5.853727379045e-1 1.951242459682e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -3.512236427427e-1 1.951242459682e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.170745475809e-1 1.951242459682e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.170745475809e-1 1.951242459682e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 3.512236427427e-1 1.951242459682e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 5.853727379045e-1 1.951242459682e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 8.195218330663e-1 1.951242459682e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.053670928228e0 1.951242459682e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.053670928228e0 1.951242459682e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -8.195218330663e-1 2.731739443554e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -5.853727379045e-1 2.731739443554e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -3.512236427427e-1 2.731739443554e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.170745475809e-1 2.731739443554e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.170745475809e-1 2.731739443554e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 3.512236427427e-1 2.731739443554e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 5.853727379045e-1 2.731739443554e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 8.195218330663e-1 2.731739443554e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.053670928228e0 2.731739443554e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.053670928228e0 2.731739443554e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -8.195218330663e-1 3.512236427427e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -5.853727379045e-1 3.512236427427e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -3.512236427427e-1 3.512236427427e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.170745475809e-1 3.512236427427e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.170745475809e-1 3.512236427427e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 3.512236427427e-1 3.512236427427e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 5.853727379045e-1 3.512236427427e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 8.195218330663e-1 3.512236427427e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.053670928228e0 3.512236427427e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.053670928228e0 3.512236427427e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -8.195218330663e-1 4.292733411299e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -5.853727379045e-1 4.292733411299e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -3.512236427427e-1 4.292733411299e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.170745475809e-1 4.292733411299e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.170745475809e-1 4.292733411299e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 3.512236427427e-1 4.292733411299e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 5.853727379045e-1 4.292733411299e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 8.195218330663e-1 4.292733411299e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.053670928228e0 4.292733411299e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.053670928228e0 4.292733411299e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -8.195218330663e-1 5.073230395172e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -5.853727379045e-1 5.073230395172e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -3.512236427427e-1 5.073230395172e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.170745475809e-1 5.073230395172e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.170745475809e-1 5.073230395172e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 3.512236427427e-1 5.073230395172e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 5.853727379045e-1 5.073230395172e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 8.195218330663e-1 5.073230395172e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.053670928228e0 5.073230395172e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.053670928228e0 5.073230395172e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -8.195218330663e-1 5.853727379045e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -5.853727379045e-1 5.853727379045e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -3.512236427427e-1 5.853727379045e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.170745475809e-1 5.853727379045e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.170745475809e-1 5.853727379045e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 3.512236427427e-1 5.853727379045e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 5.853727379045e-1 5.853727379045e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 8.195218330663e-1 5.853727379045e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.053670928228e0 5.853727379045e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.053670928228e0 5.853727379045e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -8.195218330663e-1 6.634224362917e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -5.853727379045e-1 6.634224362917e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -3.512236427427e-1 6.634224362917e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.170745475809e-1 6.634224362917e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.170745475809e-1 6.634224362917e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 3.512236427427e-1 6.634224362917e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 5.853727379045e-1 6.634224362917e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 8.195218330663e-1 6.634224362917e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.053670928228e0 6.634224362917e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.053670928228e0 6.634224362917e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -8.195218330663e-1 7.414721346790e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -5.853727379045e-1 7.414721346790e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -3.512236427427e-1 7.414721346790e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.170745475809e-1 7.414721346790e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.170745475809e-1 7.414721346790e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 3.512236427427e-1 7.414721346790e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 5.853727379045e-1 7.414721346790e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 8.195218330663e-1 7.414721346790e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.053670928228e0 7.414721346790e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.053670928228e0 7.414721346790e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -8.195218330663e-1 8.195218330663e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -5.853727379045e-1 8.195218330663e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -3.512236427427e-1 8.195218330663e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.170745475809e-1 8.195218330663e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.170745475809e-1 8.195218330663e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 3.512236427427e-1 8.195218330663e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 5.853727379045e-1 8.195218330663e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 8.195218330663e-1 8.195218330663e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.053670928228e0 8.195218330663e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.053670928228e0 8.195218330663e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -8.195218330663e-1 8.975715314535e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -5.853727379045e-1 8.975715314535e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -3.512236427427e-1 8.975715314535e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.170745475809e-1 8.975715314535e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.170745475809e-1 8.975715314535e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 3.512236427427e-1 8.975715314535e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 5.853727379045e-1 8.975715314535e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 8.195218330663e-1 8.975715314535e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.053670928228e0 8.975715314535e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.053670928228e0 8.975715314535e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -8.195218330663e-1 9.756212298408e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -5.853727379045e-1 9.756212298408e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -3.512236427427e-1 9.756212298408e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.170745475809e-1 9.756212298408e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.170745475809e-1 9.756212298408e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 3.512236427427e-1 9.756212298408e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 5.853727379045e-1 9.756212298408e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 8.195218330663e-1 9.756212298408e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.053670928228e0 9.756212298408e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.053670928228e0 9.756212298408e-1" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -8.195218330663e-1 1.053670928228e0" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -5.853727379045e-1 1.053670928228e0" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -3.512236427427e-1 1.053670928228e0" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.170745475809e-1 1.053670928228e0" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.170745475809e-1 1.053670928228e0" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 3.512236427427e-1 1.053670928228e0" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 5.853727379045e-1 1.053670928228e0" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 8.195218330663e-1 1.053670928228e0" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.053670928228e0 1.053670928228e0" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.053670928228e0 1.053670928228e0" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -8.195218330663e-1 1.131720626615e0" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -5.853727379045e-1 1.131720626615e0" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -3.512236427427e-1 1.131720626615e0" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.170745475809e-1 1.131720626615e0" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.170745475809e-1 1.131720626615e0" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 3.512236427427e-1 1.131720626615e0" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 5.853727379045e-1 1.131720626615e0" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 8.195218330663e-1 1.131720626615e0" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 1.053670928228e0 1.131720626615e0" weight="6.666666666667e-3"/>
+    <kpoint coords="0.000000000000e0 -1.053670928228e0 1.131720626615e0" weight="6.666666666667e-3"/>
+    <property dictRef="siesta:kcutof">
+      <scalar dataType="fpx:real" units="siestaUnits:angstrom">7.100000000000e-1</scalar>
+    </property>
+  </propertyList>
+  <property dictRef="siesta:kscell">
+    <matrix rows="3" columns="3" dataType="xsd:integer" units="siestaUnits:Ang">1 0 0 0 10 0 0 0 30</matrix>
+  </property>
+  <property dictRef="siesta:kdispl">
+    <array size="3" dataType="fpx:real" units="siestaUnits:Ang">0.000000000000e0 5.000000000000e-1 5.000000000000e-1</array>
+  </property>
+  <module serial="1" dictRef="MD" role="step">
+    <molecule>
+      <atomArray>
+        <atom elementType="C" x3="0.000000000000e0" y3="7.100000000000e-1" z3="1.229756073680e0" ref="siesta:e001"/>
+        <atom elementType="C" x3="0.000000000000e0" y3="1.420000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="C" x3="0.000000000000e0" y3="2.840000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="C" x3="0.000000000000e0" y3="1.420000000000e0" z3="2.459512147360e0" ref="siesta:e001"/>
+        <atom elementType="C" x3="0.000000000000e0" y3="2.840000000000e0" z3="2.459512147360e0" ref="siesta:e001"/>
+        <atom elementType="C" x3="0.000000000000e0" y3="3.550000000000e0" z3="1.229756073680e0" ref="siesta:e001"/>
+      </atomArray>
+    </molecule>
+    <lattice dictRef="siesta:ucell">
+      <latticeVector units="siestaUnits:Ang" dictRef="cml:latticeVector">1.420000000000e0 0.000000000000e0 0.000000000000e0</latticeVector>
+      <latticeVector units="siestaUnits:Ang" dictRef="cml:latticeVector">0.000000000000e0 1.420000000000e0 0.000000000000e0</latticeVector>
+      <latticeVector units="siestaUnits:Ang" dictRef="cml:latticeVector">0.000000000000e0 0.000000000000e0 1.420000000000e0</latticeVector>
+    </lattice>
+    <crystal title="Lattice Parameters">
+      <cellParameter latticeType="real" parameterType="length" units="units:angstrom">1.420000 1.420000 1.420000</cellParameter>
+      <cellParameter latticeType="real" parameterType="angle" units="units:degree">90.000000 90.000000 90.000000</cellParameter>
+    </crystal>
+    <module serial="1" dictRef="SCF" role="step">
+      <propertyList>
+        <property dictRef="siesta:ntm" title="Mesh">
+          <array size="3" dataType="xsd:integer" units="cmlUnits:countable">10 10 10</array>
+        </property>
+        <property dictRef="siesta:g2max" title="Requested Cut-Off">
+          <scalar dataType="fpx:real" units="siestaUnits:Ry">1.000000000000e2</scalar>
+        </property>
+        <property dictRef="siesta:g2mesh" title="Actual Cut-Off">
+          <scalar dataType="fpx:real" units="siestaUnits:Ry">1.370644969027e2</scalar>
+        </property>

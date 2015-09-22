@@ -1,6 +1,6 @@
 SystemName          graphene
 SystemLabel         graphene
-NumberOfAtoms          6 
+NumberOfAtoms          6
 NumberOfSpecies        1
 %block ChemicalSpeciesLabel
   1   6  C
@@ -8,23 +8,21 @@ NumberOfSpecies        1
 %block PAO.Basis                 # Define Basis set
 C           2                    # Species label, number of l-shells
  n=2   0   1                         # n, l, Nzeta
-   4.088    
-   1.000    
+   4.088
+   1.000
  n=2   1   1                       # n, l, Nzeta, Polarization, NzetaPol
-   4.870      
-   1.000      
+   4.870
+   1.000
 %endblock PAO.Basis
 XC.functional GGA
 XC.authors    PBE
- 
-LatticeConstant     1.420 Ang 
+LatticeConstant     1.420 Ang
 #%block LatticeVectors
 #   2.4830680378       0.0000000000        0.0000000000 #(a√3,0,0)
 #   1.2415340189       2.1504000000        0.0000000000 #(a(√3)/2,a*(3/2),0)
 #   0.000000000        0.0000000000        0.0000000000 #(0,0,0)
 #%endblock LatticeVectors
-
-AtomicCoordinatesFormat ScaledCartesian 
+AtomicCoordinatesFormat ScaledCartesian
 %block AtomicCoordinatesAndAtomicSpecies
    0.0000000000   0.5000000000   0.8660254040  1
    0.0000000000   1.0000000000   0.0000000000  1
@@ -38,20 +36,17 @@ AtomicCoordinatesFormat ScaledCartesian
 #   0.0000000000   5.6900000000   0.0000000000  1
 #   0.0000000000   6.1900000000   0.0000000000  1
 %endblock AtomicCoordinatesAndAtomicSpecies
-
 %block kgrid_Monkhorst_Pack
    1   0   0  0.0
    0  10   0  0.5
    0   0  30  0.5
 %endblock Kgrid_Monkhorst_Pack
-
 %block BandLines
   1   0.00000   0.000000  0.000000  \Gamma
  100  0.00000   2.1503935 2.4822690  M
  100  0.00000   2.866739  2.482269  K
  100  0.00000   0.000000  0.000000  \Gamma
 %endblock BandLines
-
 MeshCutoff         100.0 Ry
 MaxSCFIterations     500
 DM.MixingWeight      0.1
