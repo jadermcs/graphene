@@ -1,5 +1,5 @@
 
-#FDF: Opened INPUT_TMP.83368      for input. Unit: 12
+#FDF: Opened INPUT_TMP.92570      for input. Unit: 12
 
 fdf-debug              0     # Default value
 SystemName     graphene                                                                                                                            
@@ -28,10 +28,11 @@ PAO.SoftInnerRadius         0.9000000000         # Default value
 PAO.SoftPotential          40.00000000         # Default value
 PAO.SplitNorm         0.1500000000         # Default value
 PAO.SplitNormH         -1.000000000         # Default value
-Number_of_species                        1
+Number_of_species                        2
 
 %block ChemicalSpeciesLabel                                                    
- 1    6  C                                                                     
+ 1    6		C                                                                     
+ 2	 27		Co                                                                     
 %endblock ChemicalSpeciesLabel                                                 
 
 FilterCutoff          0.000000000     Ry     # Default value
@@ -54,6 +55,24 @@ PAO.NewSplitCode              F     # Default value
 PAO.Filter              F     # Default value
 Vna.Filter              F     # Default value
 PCC.Filter              F     # Default value
+FilterCutoff          0.000000000     Ry     # Default value
+FilterTol          0.000000000     Ry     # Default value
+KB.Rmax          6.000000000     Bohr     # Default value
+PAO.EnergyShift         0.2204939653E-02         Ry
+# Above item originally: PAO.EnergyShift         0.3000000000E-01 eV        
+PAO.SplitTailNorm              F     # Default value
+PAO.FixSplitTable              F     # Default value
+PAO.NewSplitCode              F     # Default value
+PAO.Filter              F     # Default value
+PAO.Filter              F     # Default value
+PAO.Filter              F     # Default value
+PAO.Filter              F     # Default value
+PAO.OldStylePolorbs              T     # Default value
+PAO.SplitTailNorm              F     # Default value
+PAO.FixSplitTable              F     # Default value
+PAO.NewSplitCode              F     # Default value
+PAO.Filter              F     # Default value
+Vna.Filter              F     # Default value
 PAO.BasisType     split          # Default value
 Atom-Setup-Only              F     # Default value
 UseStructFile              F     # Default value
@@ -118,7 +137,7 @@ ZM.CalcAllForces              F     # Default value
 	12.780000	4.919000	6.000000	1                                                 
 	14.200000	4.919000	6.000000	1                                                 
 	14.910000	3.688000	6.000000	1                                                 
-	2.130000	6.148000	6.000000	1                                                  
+	2.130000	6.148000	6.000000	2                                                  
 %endblock AtomicCoordinatesAndAtomicSpecies                                    
 
 UseSaveData              F     # Default value
@@ -253,7 +272,7 @@ ProcessorGridY              1     # Default value
 ProcessorGridZ              1     # Default value
 processorY              2     # Default value
 blocksize             24     # Default value
-NumberOfEigenStates            533     # Default value
+NumberOfEigenStates            535     # Default value
 TimeReversalSymmetryForKpoints              T     # Default value
 
 %block kgrid_Monkhorst_Pack                                                    
