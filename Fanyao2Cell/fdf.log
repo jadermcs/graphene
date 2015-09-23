@@ -1,5 +1,5 @@
 
-#FDF: Opened INPUT_TMP.28341      for input. Unit: 12
+#FDF: Opened INPUT_TMP.16926      for input. Unit: 12
 
 fdf-debug              0     # Default value
 SystemName     graphene                                                                                                                            
@@ -68,7 +68,7 @@ LatticeConstant          4.648728119           Bohr
 %endblock LatticeVectors                                                       
 
 AtomicCoordinatesFormat     Ang                                                                                                                                 
-NumberOfAtoms                       16
+NumberOfAtoms                       25
 ZM.UnitsLength     Bohr           # Default value
 ZM.UnitsAngle     rad            # Default value
 ZM.ForceTolLength         0.1555740000E-02 Ry/Bohr     # Default value
@@ -94,6 +94,15 @@ ZM.CalcAllForces              F     # Default value
   3.550   3.688   6.000    1    #13                                            
   1.420   4.919   6.000    1    #14                                            
   4.260   4.919   6.000    1    #15                                            
+  8.520   1.229   6.000    1    #16                                            
+  9.230   0.000   6.000    1    #17                                            
+ 10.650   0.000   6.000    1    #18                                            
+ 11.360   1.229   6.000    1    #19                                            
+ 12.780   1.229   6.000    1    #20                                            
+ 13.490   0.000   6.000    1    #21                                            
+ 14.910   0.000   6.000    1    #22                                            
+ 15.620   1.229   6.000    1    #23                                            
+  9.230   2.459   6.000    1    #24                                            
 %endblock AtomicCoordinatesAndAtomicSpecies                                    
 
 UseSaveData              F     # Default value
@@ -178,7 +187,7 @@ MD.TauRelax          100.0000000     fs     # Default value
 MD.BulkModulus         0.6797730000E-02 Ry/Bohr**3     # Default value
 MD.FCDispl         0.4000000000E-01 Bohr     # Default value
 MD.FCfirst              1     # Default value
-MD.FClast             16     # Default value
+MD.FClast             25     # Default value
 UseSpatialDecomposition              F     # Default value
 UseDomainDecomposition              F     # Default value
 Harris_functional              F     # Default value
@@ -226,9 +235,7 @@ RcSpatial          0.000000000     Bohr     # Default value
 ProcessorGridX              1     # Default value
 ProcessorGridY              1     # Default value
 ProcessorGridZ              1     # Default value
-processorY              1     # Default value
-blocksize             24     # Default value
-NumberOfEigenStates            208     # Default value
+NumberOfEigenStates            325     # Default value
 TimeReversalSymmetryForKpoints              T     # Default value
 
 %block kgrid_Monkhorst_Pack                                                    
@@ -261,28 +268,7 @@ LatticeConstant          4.648728119           Bohr
 DirectPhi              F     # Default value
 SimulateDoping              F     # Default value
 SlabDipoleCorrection              F     # Default value
-Diag.ParallelOverK              F     # Default value
 LatticeConstant          4.648728119           Bohr
 # Above item originally: LatticeConstant          2.460000000     Ang       
 
 %block LatticeVectors                                                          
-  2.130    1.230000    0.000000                                                
-  2.130   -1.230000    0.000000                                                
-  0.000    0.000000   15.000000                                                
-%endblock LatticeVectors                                                       
-
-Diag.AllInOne              F     # Default value
-Diag.DivideAndConquer              T     # Default value
-Diag.NoExpert              F     # Default value
-Diag.PreRotate              F     # Default value
-Diag.Use2D              T     # Default value
-SingleExcitation              F     # Default value
-OccupationFunction     FD                                                                                                                                  
-OccupationFunction     FD                                                                                                                                  
-DM.FormattedFiles              F     # Default value
-DM.FormattedInput              F     # Default value
-DM.FormattedOutput              F     # Default value
-WriteCoorXmol              T
-WriteCoorCerius              F     # Default value
-BasisPressure         0.2000000000     GPa     # Default value
-OpticalCalculation              F     # Default value
