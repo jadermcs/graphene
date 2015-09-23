@@ -1,7 +1,9 @@
 
-Allocation summary at 2015/09/22 16:00:03.759 -03:00
+Allocation summary at 2015/09/23 09:53:40.583 -03:00
 
 Present memory allocation:           0.000000 Mbyte
 Maximum memory allocation:           0.000000 Mbyte
 Occurred after allocating: 
 In routine:                
+
+Present memory all nodes :           0.000000 Mbyte
