@@ -1,0 +1,71 @@
+SystemName          graphene
+SystemLabel         graphene
+NumberOfAtoms          24
+NumberOfSpecies        1
+%block ChemicalSpeciesLabel
+  1   6  C
+%endblock ChemicalSpeciesLabel
+%block PAO.Basis                 # Define Basis set
+C           2                    # Species label, number of l-shells
+ n=2   0   1                         # n, l, Nzeta
+   4.088
+   1.000
+ n=2   1   1                       # n, l, Nzeta, Polarization, NzetaPol
+   4.870
+   1.000
+%endblock PAO.Basis
+XC.functional GGA
+XC.authors    PBE
+LatticeConstant     1.433600 Ang
+%block LatticeVectors
+   14.00000000        0.0000000000        0.0000000000
+   0.000000000        3.0000000000        0.0000000000
+   0.000000000        0.0000000000       10.3923048480
+%endblock LatticeVectors
+AtomicCoordinatesFormat ScaledCartesian
+%block AtomicCoordinatesAndAtomicSpecies
+   0.0000000000   0.5000000000   0.8660254040  1
+   0.0000000000  -0.5000000000   0.8660254040  1
+   0.0000000000   1.0000000000   0.0000000000  1
+   0.0000000000   2.0000000000   0.0000000000  1
+   0.0000000000   0.5000000000   2.5980762120  1
+   0.0000000000  -0.5000000000   2.5980762120  1
+   0.0000000000   1.0000000000   1.7320508080  1
+   0.0000000000   2.0000000000   1.7320508080  1
+   0.0000000000   0.5000000000   4.3301270200  1
+   0.0000000000  -0.5000000000   4.3301270200  1
+   0.0000000000   1.0000000000   3.4641016160  1
+   0.0000000000   2.0000000000   3.4641016160  1
+   0.0000000000   0.5000000000   6.0621778280  1
+   0.0000000000  -0.5000000000   6.0621778280  1
+   0.0000000000   1.0000000000   5.1961524240  1
+   0.0000000000   2.0000000000   5.1961524240  1
+   0.0000000000   0.5000000000   7.7942286360  1
+   0.0000000000  -0.5000000000   7.7942286360  1
+   0.0000000000   1.0000000000   6.9282032320  1
+   0.0000000000   2.0000000000   6.9282032320  1
+   0.0000000000   0.5000000000   9.5262794440  1
+   0.0000000000  -0.5000000000   9.5262794440  1
+   0.0000000000   1.0000000000   8.6602540400  1
+   0.0000000000   2.0000000000   8.6602540400  1
+%endblock AtomicCoordinatesAndAtomicSpecies
+%block kgrid_Monkhorst_Pack
+   1   0   0  0.0
+   0  20   0  0.5
+   0   0  10  0.5
+%endblock Kgrid_Monkhorst_Pack
+MeshCutoff         100.0 Ry
+MaxSCFIterations     500
+DM.MixingWeight      0.1
+DM.NumberPulay       5
+DM.Tolerance         1.d-4
+SolutionMethod   transiesta
+TS.WriteHS  .true.
+TS.NumUsedAtomsLeft   8
+TS.NumUsedAtomsRight  8
+TS.HSFileLeft   '../electrode/graphene.TSHS'
+TS.HSFileRight  '../electrode/graphene.TSHS'
+TS.TBT.HSFile   './graphene.TSHS'
+TS.TBT.Emin    -4.0 eV
+TS.TBT.Emax     4.0 eV
+TS.TBT.NPoints   200

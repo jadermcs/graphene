@@ -6,3 +6,5 @@ cp *.out temp/
 rm -f *
 cp temp/* .
 rm -r temp/
+rm graphene.out
+siesta < graphene.fdf | tee graphene.out
