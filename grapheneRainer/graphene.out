@@ -1,0 +1,371 @@
+Siesta Version:                                        siesta-3.2-pl-5
+Architecture  : x86_64-unknown-linux-gnu--unknown
+Compiler flags: f95 -g -O2
+SERIAL version
+
+* Running in serial mode
+>> Start of run:  15-OCT-2015  10:44:27
+
+                           ***********************       
+                           *  WELCOME TO SIESTA  *       
+                           ***********************       
+
+reinit: Reading from standard input
+************************** Dump of input data file ****************************
+Siesta Version:                                        siesta-3.2-pl-5
+Architecture  : x86_64-unknown-linux-gnu--unknown
+Compiler flags: f95 -g -O2
+SERIAL version
+
+* Running in serial mode
+>> Start of run:  15-OCT-2015  10:44:27
+
+                           ***********************       
+                           *  WELCOME TO SIESTA  *       
+                           ***********************       
+
+reinit: Reading from standard input
+************************** Dump of input data file ****************************
+************************** End of input data file *****************************
+Siesta Version:                                        siesta-3.2-pl-5
+Architecture  : x86_64-unknown-linux-gnu--unknown
+Compiler flags: f95 -g -O2
+SERIAL version
+
+* Running in serial mode
+>> Start of run:  15-OCT-2015  10:44:27
+
+                           ***********************       
+                           *  WELCOME TO SIESTA  *       
+                           ***********************       
+
+reinit: Reading from standard input
+************************** Dump of input data file ****************************
+************************** End of input data file *****************************
+SystemName    graphene
+SystemLabel   graphene
+# ============= Atomic informations ===============
+NumberOfAtoms        8
+NumberOfSpecies      1
+%block ChemicalSpeciesLabel
+ 1    6  C
+%endblock ChemicalSpeciesLabel
+# ======== lattice, cell and coordinates ==========
+# === lattice constant ===
+LatticeConstant   4,950752 Ang
+#====== Lattice Vectors - Simulation box ======
+%block LatticeVectors
+  0.866025403784     0.50000    0.000000
+  0.866025403784    -0.50000    0.000000
+  0.000              0.000000   6.05968547808
+%endblock LatticeVectors
+# === Coordinates and formats (input and output) ===
+AtomicCoordinatesFormat Ang
+AtomCoorFormatOut  Ang
+%block AtomicCoordinatesAndAtomicSpecies
+0.61487804    0.35500000    0.00000000	1
+3.07439018    1.77500000    0.00000000	1
+3.07439018    0.35500000    0.00000000	1
+5.53390233    1.77500000    0.00000000	1
+1.84463411    2.48500000    0.00000000	1
+
+
+reinit: -----------------------------------------------------------------------
+reinit: System Name: 
+4.30414626    3.90500000    0.00000000	1
+4.30414626    2.48500000    0.00000000	1
+6.76365840    3.90500000    0.00000000	1
+%endblock AtomicCoordinatesAndAtomicSpecies
+reinit: -----------------------------------------------------------------------
+reinit: System Name: 
+# ============== kspace Grid and cutoff =============
+reinit: -----------------------------------------------------------------------
+reinit: System Label: siesta                                                      
+%block kgrid_Monkhorst_Pack
+ 15   0    0     0.0
+ 0    15   0     0.0
+ 0    0    1     0.0
+reinit: -----------------------------------------------------------------------
+reinit: System Label: siesta                                                      
+reinit: -----------------------------------------------------------------------
+%endblock kgrid_Monkhorst_Pack
+MeshCutoff   200  Ry
+reinit: -----------------------------------------------------------------------
+# ============== Block to create supercells  =============
+#%blockSuperCell
+# 1   0   0
+# 1   1   0
+# 0   0   9
+#%endblockSuperCell
+#==== hold some atoms in the CG relaxation ====
+#%block GeometryConstraints
+#position from  1 to  180
+#%endblock GeometryConstraints
+#============== General variables ===================
+#= Basis =
+PAO.BasisSize     DZP
+PAO.EnergyShift   0.03 eV
+#============== MD variables =====================
+# Type of Run              MD, FC, CG
+# SCF  calculation         MD.NumCGsteps     0
+# Structure relaxation     MD.NumCGsteps     600
+#=================================================
+MD.TypeOfRun      CG
+MD.NumCGsteps     0
+MD.MaxForceTol    0.01  eV/Ang
+#=================== SCF variables ========================
+# SCF max number of iterations - single point calculation.
+# Mixing - 0.1 means 10 percent of the previous density.
+# Pulay - how many densities will be considered.
+# Tolerance - criteria to stop
+# =========================================================
+MaxSCFIterations      300
+DM.MixingWeight       0.04
+DM.NumberPulay        3
+DM.Tolerance           1.d-4
+#== Functional ==
+XC.functional       LDA
+XC.authors          CA
+#======== Solution method =====================
+# diagon, order-N or transiesta (transiesta)
+#----------------------------------------------
+# If the system is periodic and has many kpt
+# ParallelOverK    .true.
+#==============================================
+SolutionMethod  diagon
+#====================== Electronic temperature (FD or MP) ====================
+#=============== determines the occupation of the electronic states ==========
+#=============================================================================
+OccupationFunction     FD
+ElectronicTemperature  50 meV
+#=============== Write ================
+WriteMullikenPop                1
+WriteBands                      T
+SaveRho                         T
+SaveDeltaRho                    T
+SaveHS                          .false.
+SaveElectrostaticPotential      .false.
+SaveTotalPotential              no
+WriteCoorXmol                   .true.
+WriteMDXmol                     .true.
+#WriteMDhistory                  .false.
+WriteEigenvalues                yes
+#============== Automatic Cell relaxation ==============
+#MD.VariableCell   .true.
+#========== bands, dos and pdos ====================
+%block ProjectedDensityOfStates
+-10.00 3.00  0.10 2000 eV
+%endblock ProjectedDensityOfStates
+%block PDOS.kgrid_Monkhorst_Pack
+    150    0     0     0.0
+    0    150     0     0.0
+    0      0     1     0.0
+%endblock PDOS.kgrid_Monkhorst_Pack
+BandLineScale  pi/a
+%block BandLines
+1      1.155   0.667   0.000    K      # 75 point from gamma to X
+150    0.000   0.000   0.000    \Gamma # Beguin at gamma
+130    1.155   0.000   0.000    M
+75     1.155   0.667   0.000    K      # 75 point from gamma to X
+150    0.000   0.000   0.000    \Gamma # Beguin at gamma
+%endblock BandLines
+#========= Reestart the calculation ===============
+# XV - coordinates
+# DM - density matrix
+# CG - last conjugated gradiend step
+#==================================================
+UseSaveData           .true.
+MD.UseSaveXV          .true.
+DM.UseSaveDM          .true.
+MD.UseSaveCG          .true.
+************************** End of input data file *****************************
+
+reinit: -----------------------------------------------------------------------
+reinit: System Name: graphene
+reinit: -----------------------------------------------------------------------
+reinit: System Label: graphene                                                    
+reinit: -----------------------------------------------------------------------
+
+initatom: Reading input for the pseudopotentials and atomic orbitals ----------
+
+initatom: Reading input for the pseudopotentials and atomic orbitals ----------
+No species found!!!
+ERROR STOP from Node:    0
+No species found!!!
+ERROR STOP from Node:    0
+
+initatom: Reading input for the pseudopotentials and atomic orbitals ----------
+ Species number:            1  Label: C Atomic number:           6
+Ground state valence configuration:   2s02  2p02
+Reading pseudopotential information in formatted form from C.psf
+
+Valence configuration for pseudopotential generation:
+2s( 2.00) rc: 1.19
+2p( 2.00) rc: 1.19
+3d( 0.00) rc: 1.19
+4f( 0.00) rc: 1.19
+For C, standard SIESTA heuristics set lmxkb to 3
+ (one more than the basis l, including polarization orbitals).
+Use PS.lmax or PS.KBprojectors blocks to override.
+
+<basis_specs>
+===============================================================================
+C                    Z=   6    Mass=  12.010        Charge= 0.17977+309
+Lmxo=1 Lmxkb= 3    BasisType=split      Semic=F
+L=0  Nsemic=0  Cnfigmx=2
+          n=1  nzeta=2  polorb=0
+            splnorm:   0.15000    
+               vcte:    0.0000    
+               rinn:    0.0000    
+                rcs:    0.0000      0.0000    
+            lambdas:    1.0000      1.0000    
+L=1  Nsemic=0  Cnfigmx=2
+          n=1  nzeta=2  polorb=1
+            splnorm:   0.15000    
+               vcte:    0.0000    
+               rinn:    0.0000    
+                rcs:    0.0000      0.0000    
+            lambdas:    1.0000      1.0000    
+-------------------------------------------------------------------------------
+L=0  Nkbl=1  erefs: 0.17977+309
+L=1  Nkbl=1  erefs: 0.17977+309
+L=2  Nkbl=1  erefs: 0.17977+309
+L=3  Nkbl=1  erefs: 0.17977+309
+===============================================================================
+</basis_specs>
+
+atom: Called for C                     (Z =   6)
+
+read_vps: Pseudopotential generation method:
+read_vps: ATM3      Troullier-Martins                       
+Total valence charge:    4.00000
+
+xc_check: Exchange-correlation functional:
+xc_check: Ceperley-Alder
+V l=0 = -2*Zval/r beyond r=  1.3777
+V l=1 = -2*Zval/r beyond r=  1.3777
+V l=2 = -2*Zval/r beyond r=  1.3777
+V l=3 = -2*Zval/r beyond r=  1.3777
+All V_l potentials equal beyond r=  1.1710
+This should be close to max(r_c) in ps generation
+All pots = -2*Zval/r beyond r=  1.3777
+
+VLOCAL1: 99.0% of the norm of Vloc inside     31.654 Ry
+VLOCAL1: 99.9% of the norm of Vloc inside     72.140 Ry
+atom: Maximum radius for 4*pi*r*r*local-pseudopot. charge    1.41262
+atom: Maximum radius for r*vlocal+2*Zval:    1.21580
+GHOST: No ghost state for L =  0
+GHOST: No ghost state for L =  1
+GHOST: No ghost state for L =  2
+GHOST: No ghost state for L =  3
+
+KBgen: Kleinman-Bylander projectors: 
+   l= 0   rc=  1.600766   el= -1.001944   Ekb=  8.446982   kbcos=  0.272886
+   l= 1   rc=  1.620907   el= -0.398598   Ekb= -5.034232   kbcos= -0.270661
+   l= 2   rc=  1.836783   el=  0.002326   Ekb= -1.408405   kbcos= -0.004733
+   l= 3   rc=  2.004780   el=  0.003420   Ekb= -0.549826   kbcos= -0.000481
+
+KBgen: Total number of  Kleinman-Bylander projectors:   16
+atom: -------------------------------------------------------------------------
+
+atom: SANKEY-TYPE ORBITALS:
+atom: Selected multiple-zeta basis: split     
+
+SPLIT: Orbitals with angular momentum L= 0
+
+SPLIT: Basis orbitals for state 2s
+
+SPLIT: PAO cut-off radius determined from an
+SPLIT: energy shift=  0.002205 Ry
+
+   izeta = 1
+                 lambda =    1.000000
+                     rc =    5.382558
+                 energy =   -1.000028
+                kinetic =    0.859271
+    potential(screened) =   -1.859299
+       potential(ionic) =   -5.414834
+
+   izeta = 2
+                 rmatch =    3.518811
+              splitnorm =    0.150000
+                 energy =   -0.886022
+                kinetic =    1.305246
+    potential(screened) =   -2.191268
+       potential(ionic) =   -5.992246
+
+SPLIT: Orbitals with angular momentum L= 1
+
+SPLIT: Basis orbitals for state 2p
+
+SPLIT: PAO cut-off radius determined from an
+SPLIT: energy shift=  0.002205 Ry
+
+   izeta = 1
+                 lambda =    1.000000
+                     rc =    6.740804
+                 energy =   -0.396730
+                kinetic =    2.427373
+    potential(screened) =   -2.824103
+       potential(ionic) =   -6.241046
+
+   izeta = 2
+                 rmatch =    3.792903
+              splitnorm =    0.150000
+                 energy =   -0.280484
+                kinetic =    3.588699
+    potential(screened) =   -3.869183
+       potential(ionic) =   -7.685475
+
+POLgen: Perturbative polarization orbital with L=  2
+
+POLgen: Polarization orbital for state 2p
+
+   izeta = 1
+                     rc =    6.740804
+                 energy =    0.963374
+                kinetic =    2.033355
+    potential(screened) =   -1.069982
+       potential(ionic) =   -3.759514
+atom: Total number of Sankey-type orbitals: 13
+
+atm_pop: Valence configuration (for local Pseudopot. screening):
+ 2s( 2.00)                                                            
+ 2p( 2.00)                                                            
+Vna: chval, zval:    4.00000   4.00000
+
+Vna:  Cut-off radius for the neutral-atom potential:   6.740804
+
+atom: _________________________________________________________________________
+
+prinput: Basis input ----------------------------------------------------------
+
+PAO.BasisType split     
+
+%block ChemicalSpeciesLabel
+    1    6 C                       # Species index, atomic number, species label
+%endblock ChemicalSpeciesLabel
+
+%block PAO.Basis                 # Define Basis set
+C                     2                    # Species label, number of l-shells
+ n=2   0   2                         # n, l, Nzeta 
+   5.383      3.519   
+   1.000      1.000   
+ n=2   1   2 P   1                   # n, l, Nzeta, Polarization, NzetaPol
+   6.741      3.793   
+   1.000      1.000   
+%endblock PAO.Basis
+
+prinput: ----------------------------------------------------------------------
+
+ FDF_CONVFAC: Unknown unit = 950752                                                          
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   EXIT CODE: 6
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+YOUR APPLICATION TERMINATED WITH THE EXIT STRING: Aborted (signal 6)
+This typically refers to a problem with your application.
+Please see the FAQ page for debugging suggestions

@@ -1,0 +1,59 @@
+
+#FDF: Opened INPUT_TMP.73155      for input. Unit: 12
+
+fdf-debug              0     # Default value
+SystemName     graphene                                                                                                                            
+SystemLabel     graphene                                                                                                                            
+XML.Write              T     # Default value
+Write.XML              T     # Default value
+XML.AbortOnErrors              F     # Default value
+XML.AbortOnWarnings              F     # Default value
+alloc_report_level              0     # Default value
+xc.functional     LDA                                                                                                                                 
+xc.authors     CA                                                                                                                                  
+MM.Cutoff          30.00000000     Bohr     # Default value
+MM.UnitsEnergy     eV     # Default value
+MM.UnitsDistance     Ang     # Default value
+WriteIonPlotFiles              F     # Default value
+Atom.Debug.KB.Generation              F     # Default value
+user-basis              F     # Default value
+user-basis-netcdf              F     # Default value
+ReparametrizePseudos              F     # Default value
+Restricted.Radial.Grid              T     # Default value
+Rmax.Radial.Grid          0.000000000         # Default value
+PAO.BasisSize     DZP                                                                                                                                 
+PAO.BasisType     split          # Default value
+PAO.SoftDefault              F     # Default value
+PAO.SoftInnerRadius         0.9000000000         # Default value
+PAO.SoftPotential          40.00000000         # Default value
+PAO.SplitNorm         0.1500000000         # Default value
+PAO.SplitNormH         -1.000000000         # Default value
+Number_of_species                        1
+
+%block ChemicalSpeciesLabel                                                    
+ 1    6  C                                                                     
+%endblock ChemicalSpeciesLabel                                                 
+
+FilterCutoff          0.000000000     Ry     # Default value
+FilterTol          0.000000000     Ry     # Default value
+KB.Rmax          6.000000000     Bohr     # Default value
+PAO.EnergyShift         0.2204939653E-02         Ry
+# Above item originally: PAO.EnergyShift         0.3000000000E-01 eV        
+PAO.SplitTailNorm              F     # Default value
+PAO.FixSplitTable              F     # Default value
+PAO.NewSplitCode              F     # Default value
+PAO.Filter              F     # Default value
+PAO.Keep.Findp.Bug              F     # Default value
+PAO.Filter              F     # Default value
+PAO.Filter              F     # Default value
+PAO.Filter              F     # Default value
+PAO.OldStylePolorbs              T     # Default value
+PAO.SplitTailNorm              F     # Default value
+PAO.FixSplitTable              F     # Default value
+PAO.NewSplitCode              F     # Default value
+PAO.Filter              F     # Default value
+Vna.Filter              F     # Default value
+PAO.BasisType     split          # Default value
+Atom-Setup-Only              F     # Default value
+UseStructFile              F     # Default value
+MD.UseStructFile              F     # Default value
