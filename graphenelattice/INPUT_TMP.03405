@@ -1,0 +1,121 @@
+SystemName    graphene
+SystemLabel   graphene
+# ============= Atomic informations ===============
+NumberOfAtoms        4
+NumberOfSpecies      1
+%block ChemicalSpeciesLabel
+ 1    6  C
+%endblock ChemicalSpeciesLabel
+# ======== lattice, cell and coordinates ==========
+# === lattice constant ===
+LatticeConstant   2.475376 Ang
+#====== Lattice Vectors - Simulation box ======
+%block LatticeVectors
+  1.732050808000     1.00000    0.000000
+  0.866025403784    -0.50000    0.000000
+  0.000              0.000000   6.05968547808
+%endblock LatticeVectors
+# === Coordinates and formats (input and output) ===
+AtomicCoordinatesFormat Ang
+AtomCoorFormatOut  Ang
+%block AtomicCoordinatesAndAtomicSpecies
+  0.000   0.000   6.000    1
+  1.420   0.000   6.000    1
+  2.130   1.229   6.000	1
+  3.550   1.229   6.000	1
+%endblock AtomicCoordinatesAndAtomicSpecies
+# ============== kspace Grid and cutoff =============
+%block kgrid_Monkhorst_Pack
+ 15   0    0     0.0
+ 0    15   0     0.0
+ 0    0    1     0.0
+%endblock kgrid_Monkhorst_Pack
+MeshCutoff   200  Ry
+# ============== Block to create supercells  =============
+#%blockSuperCell
+# 1   0   0
+# 1   1   0
+# 0   0   9
+#%endblockSuperCell
+#==== hold some atoms in the CG relaxation ====
+#%block GeometryConstraints
+#position from  1 to  180
+#%endblock GeometryConstraints
+#============== General variables ===================
+#= Basis =
+PAO.BasisSize     DZP
+PAO.EnergyShift   0.03 eV
+#============== MD variables =====================
+# Type of Run              MD, FC, CG
+# SCF  calculation         MD.NumCGsteps     0
+# Structure relaxation     MD.NumCGsteps     600
+#=================================================
+MD.TypeOfRun      CG
+MD.NumCGsteps     200
+MD.MaxForceTol    0.01  eV/Ang
+#=================== SCF variables ========================
+# SCF max number of iterations - single point calculation.
+# Mixing - 0.1 means 10 percent of the previous density.
+# Pulay - how many densities will be considered.
+# Tolerance - criteria to stop
+# =========================================================
+MaxSCFIterations      300
+DM.MixingWeight       0.04
+DM.NumberPulay        3
+DM.Tolerance           1.d-4
+#== Functional ==
+XC.functional       LDA
+XC.authors          CA
+#======== Solution method =====================
+# diagon, order-N or transiesta (transiesta)
+#----------------------------------------------
+# If the system is periodic and has many kpt
+# ParallelOverK    .true.
+#==============================================
+SolutionMethod  diagon
+#====================== Electronic temperature (FD or MP) ====================
+#=============== determines the occupation of the electronic states ==========
+#=============================================================================
+OccupationFunction     FD
+ElectronicTemperature  50 meV
+#=============== Write ================
+WriteMullikenPop                1
+WriteBands                      T
+SaveRho                         T
+SaveDeltaRho                    T
+SaveHS                          .false.
+SaveElectrostaticPotential      .false.
+SaveTotalPotential              no
+WriteCoorXmol                   .true.
+WriteMDXmol                     .true.
+#WriteMDhistory                  .false.
+WriteEigenvalues                yes
+#============== Automatic Cell relaxation ==============
+#MD.VariableCell   .true.
+#========== bands, dos and pdos ====================
+%block ProjectedDensityOfStates
+-10.00 3.00  0.10 2000 eV
+%endblock ProjectedDensityOfStates
+%block PDOS.kgrid_Monkhorst_Pack
+    150    0     0     0.0
+    0    150     0     0.0
+    0      0     1     0.0
+%endblock PDOS.kgrid_Monkhorst_Pack
+BandLineScale  pi/a
+%block BandLines
+1      1.155   0.667   0.000    K      # 75 point from gamma to X
+150    0.000   0.000   0.000    \Gamma # Beguin at gamma
+130    1.155   0.000   0.000    M
+75     1.155   0.667   0.000    K      # 75 point from gamma to X
+150    0.000   0.000   0.000    \Gamma # Beguin at gamma
+%endblock BandLines
+#========= Reestart the calculation ===============
+# XV - coordinates
+# DM - density matrix
+# CG - last conjugated gradiend step
+#==================================================
+UseSaveData           .true.
+MD.UseSaveXV          .true.
+DM.UseSaveDM          .true.
+MD.UseSaveCG          .true.
+WriteCoorXmol                   .true.
